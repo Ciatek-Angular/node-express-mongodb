@@ -1,0 +1,27 @@
+<h1 class="text-primary text-center"> Movies </h1>
+
+<br>
+
+<div class="form-group text-center">
+  <div class="form-group text-center">
+    <span> Movie Title </span> <input #title name="title" type="text" class="form-control" style="width: 30%; display: inline;"> <br>
+  </div>
+  
+  <div class="form-group text-center">
+    <span> Movie Genre </span> <input #genre name="genre" type="text" class="form-control" style="width: 30%; display: inline;"> <br>
+  </div>
+  
+  <div class="form-group text-center">
+    <span> Movie Length </span> <input #length name="length" type="number" class="form-control" style="width: 30%; display: inline;"> <br>
+  </div>
+
+  <div class="form-group text-center">
+    <span> Upload a Photo </span> <input #photo name="photo" type="file" class="form-control" style="width: 30%; display: inline;"> <br>
+  </div>
+  
+    <button (click)="addMovie(title,genre,length,photo)" class="btn btn-primary mb-1" style="width:20%;">Add Movie</button>
+</div>
+
+<div style="margin-left: 10%;">
+  <app-movie *ngFor="let movie of movies" [movie]="movie" (deleteMovie)="onDeleteMovie($event)"></app-movie>
+</div>

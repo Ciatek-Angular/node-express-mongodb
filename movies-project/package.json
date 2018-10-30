@@ -1,0 +1,20 @@
+{
+  "name": "movies-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "cd back && npm start",
+    "client": "cd front && npm start",
+    "start": "concurrently --kill-others --names \" server client \" \"npm run server\" \"npm run client\" ",
+    "back": "cd back && npm install",
+    "front": "cd front && npm install",
+    "install": "concurrently --kill-others-on-fail --names \" front back \" \"npm run front\" \"npm run back\" \"npm run\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.0.1"
+  }
+}
