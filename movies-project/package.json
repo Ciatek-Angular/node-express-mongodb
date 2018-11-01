@@ -6,7 +6,7 @@
   "scripts": {
     "server": "cd back && npm start",
     "client": "cd front && npm start",
-    "start": "concurrently --kill-others --names \" server client \" \"npm run server\" \"npm run client\" \"npm run front\" \"npm run back\"  ",
+    "start": "concurrently --kill-others --names \" server client \" \"npm run server\" \"npm run client\"  ",
     "back": "cd back && npm install",
     "front": "cd front && npm install",
     "install": "concurrently --kill-others-on-fail --names \" front back \" \"npm run front\" \"npm run back\" \"npm run\" ",
