@@ -1,5 +1,6 @@
 {
   "name": "movies-project",
+  "main": "app.js",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
