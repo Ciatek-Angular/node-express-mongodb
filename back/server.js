@@ -2,6 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser');
 const app = express()
 const PORT= 3000
+const path = require('path');
+
 
 // mongo db
 var mongodb = require("mongodb");
@@ -30,7 +32,7 @@ mongodb.MongoClient.connect(mongoUrl, function (err, database) {
     // Movies = db.collection('movies')
     console.log("Database connection ready");
 
-    var server = app.listen(PORT, function () {
+    var server = app.listen(process.env.PORT || PORT, function () {
         console.log("App now running on port", PORT);
     });
 
@@ -48,6 +50,11 @@ mongodb.MongoClient.connect(mongoUrl, function (err, database) {
     next();
   });
 
+app.use(express.static(__dirname + '../front/dist/movies-project'));
+
+app.get('/*', function(req,res) {
+    res.sendFile(path.join(__dirname+'/dist/movies-project/index.html'));
+});
 
   
 app.get('/', (req, res) => {
