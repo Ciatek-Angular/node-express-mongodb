@@ -50,10 +50,10 @@ mongodb.MongoClient.connect(mongoUrl, function (err, database) {
     next();
   });
 
-app.use(express.static(__dirname + '../front/dist/movies-project'));
+app.use(express.static('../front/dist/movies-project'));
 
 app.get('/*', function(req,res) {
-    res.sendFile(path.join(__dirname+'../front/dist/movies-project/index.html'));
+    res.sendFile(path.join('../front/dist/movies-project/index.html'));
 });
 
   
