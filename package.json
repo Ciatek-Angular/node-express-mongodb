@@ -9,7 +9,7 @@
     "start": "concurrently --kill-others --names \" server \" \"npm run server\" ",
     "back": "cd back && npm install",
     "front": "cd front && npm install",
-    "install": "concurrently --kill-others-on-fail --names \" back \" \"npm run back\" ",
+    "install": "concurrently --kill-others-on-fail --names \" front back \" \"npm run back npm run front\" ",
     "build": "cd front && ng build && cd .. && cd back && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
